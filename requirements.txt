@@ -1,0 +1,4 @@
+boto3
+kubernetes
+pyOpenSSL
+python-json-logger
