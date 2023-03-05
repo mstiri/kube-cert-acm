@@ -1,8 +1,9 @@
 name: "[Release] - Publish Helm Chart"
 
 on: 
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
   release_chart:
