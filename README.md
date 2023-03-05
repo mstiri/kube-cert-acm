@@ -37,10 +37,14 @@ It has been tested for Let's Encrypt certificates generated using cert-manager.
 
 kube-cert-acm can be installed using the official helm chart:
 
-**TODO**: Add helm Repo 
+Add the Helm repository:
 
 ```bash
-helm install kube-cert-acm <repo>/kube-cert-acm --set aws.region="<AWS_REGION>" \
+helm repo add kube-cert-acm https://mstiri.github.io/kube-cert-acm
+```
+
+```bash
+helm install kube-cert-acm kube-cert-acm/kube-cert-acm --set aws.region="<AWS_REGION>" \
 	--set serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn="arn:aws:iam::<ACCOUNT_ID>:role/<ROLE_NAME>" \
 	-f values.yaml
 
