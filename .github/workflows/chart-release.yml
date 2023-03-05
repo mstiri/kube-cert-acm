@@ -1,9 +1,9 @@
-name: "[Release] - Publish Helm Chary"
+name: "[Release] - Publish Helm Chart"
 
 on: push
 
 jobs:
-  release:
+  release_chart:
     permissions:
       contents: write
     runs-on: ubuntu-latest
