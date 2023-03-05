@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "kube-cert-acm.fullname" . }}
+  labels:
+    {{- include "kube-cert-acm.labels" . | nindent 4 }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ include "kube-cert-acm.fullname" . }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "kube-cert-acm.fullname" . }}
+  namespace: {{ .Release.Namespace }}

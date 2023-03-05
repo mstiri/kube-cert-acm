@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "kube-cert-acm.fullname" . }}
+  labels:
+    {{- include "kube-cert-acm.labels" . | nindent 4 }}
+data:
+{{- range $path, $config := .Values.certificatesConfig }}
+  {{ $path }}: |
+{{ $config | indent 4 -}}
+{{- end -}}
