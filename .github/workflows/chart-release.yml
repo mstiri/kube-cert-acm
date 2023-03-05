@@ -1,6 +1,8 @@
 name: "[Release] - Publish Helm Chart"
 
-on: push
+on: 
+  release:
+    types: [published]
 
 jobs:
   release_chart:
