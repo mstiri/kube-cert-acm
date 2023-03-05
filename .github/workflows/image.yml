@@ -21,6 +21,8 @@ jobs:
         uses: docker/metadata-action@v2
         with:
           images: mstiri/kube-cert-acm
+          tags: |
+            type=ref,event=branch
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
