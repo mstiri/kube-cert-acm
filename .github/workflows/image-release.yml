@@ -1,6 +1,8 @@
-name: Publish Docker image
+name: "[Release] - Publish Docker image"
 
-on: push
+on: 
+  release:
+    types: [published]
 
 jobs:
   push_to_registry:
@@ -18,11 +20,13 @@ jobs:
      
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v2
+        uses: docker/metadata-action@v4
         with:
           images: mstiri/kube-cert-acm
           tags: |
             type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
