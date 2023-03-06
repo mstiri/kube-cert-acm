@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "kube-cert-acm.labels" . | nindent 4 }}
 spec:
-{{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-{{- end }}
   selector:
     matchLabels:
       {{- include "kube-cert-acm.selectorLabels" . | nindent 6 }}
