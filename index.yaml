@@ -2,6 +2,24 @@ apiVersion: v1
 entries:
   kube-cert-acm:
   - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2023-03-06T06:45:41.024158366Z"
+    description: kube-cert-acm Helm Chart. Sync Certificates from Kubernetes to AWS
+      Certificate Manager
+    digest: 7042dd0a8d96c1e8aab7c2b7cae42af6e01985d164e8cb8274e870a4c6cf4ca8
+    keywords:
+    - letsencrypt
+    - tls
+    - certificates
+    - aws-certificate-manager
+    name: kube-cert-acm
+    sources:
+    - https://github.com/mstiri/kube-cert-acm
+    type: application
+    urls:
+    - https://github.com/mstiri/kube-cert-acm/releases/download/kube-cert-acm-0.0.2/kube-cert-acm-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
     created: "2023-03-05T20:28:35.100821089Z"
     description: kube-cert-acm Helm Chart. Sync Certificates from Kubernetes to AWS
@@ -12,4 +30,4 @@ entries:
     urls:
     - https://github.com/mstiri/kube-cert-acm/releases/download/kube-cert-acm-0.0.1/kube-cert-acm-0.0.1.tgz
     version: 0.0.1
-generated: "2023-03-05T20:28:35.100832489Z"
+generated: "2023-03-06T06:45:41.024224867Z"
